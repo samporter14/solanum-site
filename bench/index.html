@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bench — Solanum</title>
+<meta name="description" content="Bench is an unofficial native Mac app for Claude Science: its web UI in one window, plus a floating panel of animated lab specimens.">
+<link rel="canonical" href="https://solanum.ltd/bench/">
+<link rel="icon" type="image/svg+xml" href="/assets/solanum-glyph.svg">
+<meta property="og:title" content="Bench — Solanum">
+<meta property="og:description" content="Bench is an unofficial native Mac app for Claude Science: its web UI in one window, plus a floating panel of animated lab specimens.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solanum.ltd/bench/">
+<meta name="theme-color" content="#FAF9F5">
+<style>
+html{background:#FAF9F5;-webkit-text-size-adjust:100%}
+body{margin:0;background:#FAF9F5}
+a{color:#9C4221}a:hover{color:#7A331A}
+a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
+img{max-width:100%}
+</style>
+</head>
+<body>
+<div style="background: #FAF9F5; color: #141413; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 27px">
+
+  <header style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+    <a href="/" aria-label="Solanum, home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; color: #141413">
+      <img src="/assets/solanum-mark.svg" alt="" style="width: 40px; height: 40px; display: block">
+      <span style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 20px; line-height: 24px; letter-spacing: 0.17em">SOLANUM</span>
+    </a>
+    <nav aria-label="Software" style="display: flex; gap: 8px">
+      <a href="/bench/" aria-current="page" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: underline; text-underline-offset: 6px; font-size: 15px; line-height: 23px; font-weight: 500">Bench</a>
+      <a href="/nidus/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Nidus</a>
+    </nav>
+  </header>
+
+  <main>
+    <section style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 72px clamp(20px, 5vw, 64px) 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 48px; align-items: center">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px">
+        <img src="/assets/bench-icon.png" alt="Bench icon: an Erlenmeyer flask inside the Solanum ring." style="width: 88px; height: 88px; border-radius: 22%; display: block">
+        <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Bench &middot; macOS app</div>
+        <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.1; text-wrap: balance">Claude Science as a real Mac app.</h1>
+        <p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 32px; text-wrap: pretty">Bench puts Claude Science in one native window, and adds a small glass panel that shows when a session is working and when it needs you.</p>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px">
+          <a href="https://github.com/samporter14/bench" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; background: #141413; color: #FAF9F5; border-radius: 999px; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Get Bench on GitHub</a>
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #5E5D59">Requires macOS 27 on Apple silicon, with Claude Science installed</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 520px">
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Or install from Terminal</div>
+          <pre style="margin: 0; box-sizing: border-box; padding: 16px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 8px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 13px; line-height: 20px; color: #141413; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; -webkit-user-select: all"><code style="font-family: inherit">curl -fsSL https://raw.githubusercontent.com/samporter14/bench/main/install.sh | zsh</code></pre>
+        </div>
+      </div>
+      <img src="/assets/bench-scenes.gif" alt="Eight of Bench's animated lab specimens playing: a pipette aliquoting, a cell dividing, distillation, a kinesin motor, CRISPR, a curve fit, a centrifuge and planaria." style="width: 100%; height: auto; aspect-ratio: 1160 / 600; border-radius: 12px; display: block">
+    </section>
+
+    <section style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px">
+        <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">What it adds</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 40px 24px">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+              <img src="/assets/bench-panel-working.png" alt="The floating panel while a session works: a specimen playing, and the session's name, project and running time." style="width: 336px; max-width: 100%; height: auto; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Lab specimens</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">While a session works, one of 487 little animated lab specimens plays in a glass panel in the corner of your screen.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+              <img src="/assets/bench-panel-card.png" alt="The panel's card when a session asked a question, with Open and Later buttons." style="width: 360px; max-width: 100%; height: auto; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">A card when it needs you</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">When a session needs your input, a card takes you straight to it. Other cards tell you when your plan or your context is nearly used up.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px 24px 0; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: flex-start; justify-content: center">
+              <img src="/assets/bench-activity.png" alt="The activity list under the toolbar: two sessions waiting on you, one stopped with an error, two working with their clocks, and recent sessions below." style="width: 390px; max-width: 100%; height: auto; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">One list of what is waiting</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">The toolbar lists the sessions that need you, the ones still working, and the ones that recently finished.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+              <img src="/assets/bench-toolbar.png" alt="The title bar: a working session's timer, the context ring at 9%, and 54% of the plan left, resetting in 1 hour 28 minutes." style="width: 418px; max-width: 100%; height: auto; border-radius: 8px; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Context and plan, in the title bar</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">The title bar shows how much context the open session has used, how much of your plan is left, and when it resets.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 32px 24px; margin-top: 16px">
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">A real Mac app</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">A toolbar, menus, keyboard shortcuts, Settings and Find. A 3 MB download that uses the WebKit already built into macOS.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Keeps to itself</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">No Bench account, no analytics, no telemetry, no update checks. Bench only talks to Claude Science running on your own Mac.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #141413; color: #FAF9F5">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 96px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px 48px">
+        <h2 style="margin: 0; flex: 1 1 420px; min-width: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Bench is available now.</h2>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+          <a href="https://github.com/samporter14/bench" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; background: #FAF9F5; color: #141413; border-radius: 999px; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Get Bench on GitHub</a>
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #B0AEA5">Requires macOS 27 on Apple silicon, with Claude Science installed</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 48px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px">
+      <div style="display: flex; align-items: center; gap: 16px">
+        <img src="/assets/solanum-mark.svg" alt="" style="width: 48px; height: 48px; display: block">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 18px; line-height: 22px; letter-spacing: 0.17em">SOLANUM</div>
+          <div style="font-size: 14px; line-height: 20px; color: #5E5D59">neurotropic software</div>
+        </div>
+      </div>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <a href="/bench/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Bench</a>
+        <a href="/nidus/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Nidus</a>
+        <a href="https://github.com/samporter14" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">GitHub</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding-top: 24px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">&copy; 2026 Solanum. Uninstall is on the roadmap.<br>Bench is a personal project, unofficial, and not affiliated with or endorsed by Anthropic. MIT licensed.</div>
+  </footer>
+
+</div>
+</body>
+</html>
