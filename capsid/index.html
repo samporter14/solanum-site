@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Capsid — Solanum</title>
+<meta name="description" content="Capsid is an unofficial native Mac app for Claude Science: its web UI in one window, a floating panel of animated lab specimens, and Claude Science on your phone.">
+<link rel="canonical" href="https://solanum.ltd/capsid/">
+<link rel="icon" type="image/svg+xml" href="../assets/solanum-glyph.svg">
+<meta property="og:title" content="Capsid — Solanum">
+<meta property="og:description" content="Capsid is an unofficial native Mac app for Claude Science: its web UI in one window, a floating panel of animated lab specimens, and Claude Science on your phone.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solanum.ltd/capsid/">
+<meta name="theme-color" content="#FAF9F5">
+<style>
+html{background:#FAF9F5;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+body{margin:0;background:#FAF9F5}
+a{color:#141413;text-decoration-line:underline;text-decoration-color:#D97757;text-decoration-thickness:2px;text-underline-offset:4px}a:hover{text-decoration-color:#141413}
+a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
+.specimen-showcase{height:240px;margin-bottom:8px;box-sizing:border-box;padding:10px;background:#fff;border:1px solid rgba(31,30,29,.15);border-radius:12px;display:grid;grid-template-rows:148px 20px 44px;gap:4px;justify-items:center;align-content:center;overflow:hidden}
+.specimen-stage{position:relative;width:148px;height:148px;border-radius:12px;overflow:hidden;background:#141413}
+.specimen-stage img,.specimen-stage video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain}
+.specimen-stage video{opacity:0;transition:opacity .22s ease;pointer-events:none}
+.specimen-stage video.is-playing{opacity:1}
+.specimen-caption{display:flex;align-items:center;justify-content:center;gap:12px;font-size:12px;line-height:20px;color:#5e5d59}
+.specimen-count{font-family:'SF Mono',Monaco,monospace;font-size:10px;color:#73726c;font-variant-numeric:tabular-nums}
+.specimen-controls{display:flex;align-items:center;gap:4px}
+.specimen-controls[hidden]{display:none}
+.specimen-controls button{min-width:44px;min-height:44px;border:0;border-radius:8px;padding:0 10px;background:transparent;color:#5e5d59;font:inherit;font-size:12px;cursor:pointer;touch-action:manipulation}
+.specimen-controls button:hover{background:#f2f0eb;color:#141413}
+.specimen-controls button:focus-visible{outline:2px solid #d97757;outline-offset:-3px}
+.specimen-controls button[aria-pressed=true]{color:#a84227;background:#f8eee9}
+.specimen-controls button:disabled{cursor:default;color:#73726c;background:transparent}
+.specimen-announcement{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.motion-reduced .specimen-stage video{transition:none}
+@media(prefers-reduced-motion:reduce){.specimen-stage video{transition:none}}
+</style>
+</head>
+<body>
+<div style="background: #FAF9F5; color: #141413; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 27px">
+
+  <header style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+    <a href="../" aria-label="Solanum, home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; color: #141413">
+      <img src="../assets/solanum-mark.svg" alt="" style="width: 40px; height: 40px; display: block">
+      <span style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 20px; line-height: 24px; letter-spacing: 0.17em">SOLANUM</span>
+    </a>
+    <nav aria-label="Software" style="display: flex; gap: 8px">
+      <a href="../capsid/" aria-current="page" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: underline; text-underline-offset: 6px; font-size: 15px; line-height: 23px; font-weight: 500">Capsid</a>
+      <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Nidus</a>
+      <a href="../updates/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Updates</a>
+    </nav>
+  </header>
+
+  <main>
+    <section style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 72px clamp(20px, 5vw, 64px) 96px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 48px; align-items: center">
+      <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 24px">
+        <img src="../assets/capsid-icon-512.png" alt="Capsid icon: a slate icosahedral shell inside the Solanum ring on a clay tile." style="width: 88px; height: 88px; border-radius: 22%; display: block">
+        <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Capsid &middot; macOS app</div>
+        <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.1; text-wrap: balance">Claude Science as a real Mac app.</h1>
+        <p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 32px; text-wrap: pretty">Keep your conversations, results and working context together. Capsid gives Claude Science a native Mac window, a Shelf for useful results, and a small glass panel that knows when a session needs you.</p>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px">
+          <a href="https://github.com/samporter14/bench" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; background: #141413; color: #FAF9F5; border-radius: 999px; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Get Capsid on GitHub</a>
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #5E5D59">Requires macOS 27 on Apple silicon, with Claude Science installed</div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 520px">
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Or install from Terminal</div>
+          <pre style="margin: 0; box-sizing: border-box; padding: 16px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 8px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 13px; line-height: 20px; color: #141413; white-space: pre-wrap; overflow-wrap: anywhere; user-select: all; -webkit-user-select: all"><code style="font-family: inherit">curl -fsSL https://raw.githubusercontent.com/samporter14/bench/main/install.sh | zsh</code></pre>
+        </div>
+      </div>
+      <picture><source media="(prefers-reduced-motion: reduce)" srcset="../assets/capsid-scenes-still.png"><img src="../assets/bench-scenes.gif" alt="Eight of Capsid's animated lab specimens playing: a pipette aliquoting, a cell dividing, distillation, a kinesin motor, CRISPR, a curve fit, a centrifuge and planaria." style="width: 100%; height: auto; aspect-ratio: 1160 / 600; border-radius: 12px; display: block"></picture>
+    </section>
+
+    <section style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px">
+        <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">What it adds</h2>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 40px 24px">
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div class="specimen-showcase" data-specimen-showcase role="group" aria-label="Lab specimen showcase">
+  <div class="specimen-stage">
+    <img data-specimen-poster src="../assets/specimens/kinesin.png" width="448" height="448" alt="">
+    <video data-specimen-video muted playsinline loop preload="none" aria-hidden="true" tabindex="-1"></video>
+  </div>
+  <div class="specimen-caption"><span data-specimen-name>Kinesin</span><span class="specimen-count" data-specimen-count>1 / 9</span></div>
+  <div class="specimen-controls" data-specimen-controls hidden>
+    <button type="button" data-specimen-previous aria-label="Previous specimen">←</button>
+    <button type="button" data-specimen-pause aria-label="Pause animations" aria-pressed="false">Pause</button>
+    <button type="button" data-specimen-next aria-label="Next specimen">→</button>
+  </div>
+  <span class="specimen-announcement" data-specimen-announcement aria-live="polite" aria-atomic="true"></span>
+</div>
+
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Lab specimens</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">A kinesin motor takes another step. A gel runs. While your session works, a little lab specimen plays in the corner of your screen. Choose your favorites, or let the subject help choose.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+              <img src="../assets/bench-panel-card.png" alt="The panel's card when a session asked a question, with Open and Later buttons." style="width: 360px; max-width: 100%; height: auto; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">A card when it needs you</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">When a session needs your input, a card takes you straight to it. Other cards tell you when your plan or context is nearly used up, or a session is paused by a usage limit.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px 24px 0; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: flex-start; justify-content: center">
+              <img src="../assets/bench-activity.png" alt="The activity list under the toolbar: two sessions waiting on you, one stopped with an error, two working with their clocks, and recent sessions below." style="width: 390px; max-width: 100%; height: auto; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">One list of what is waiting</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">The toolbar lists the sessions that need you, the ones still working, and the ones that recently finished.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px">
+            <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
+              <img src="../assets/bench-toolbar.png" alt="The title bar: a working session's timer, the context ring at 9%, and 54% of the plan left, resetting in 1 hour 28 minutes." style="width: 418px; max-width: 100%; height: auto; border-radius: 8px; display: block">
+            </div>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Context and plan, in the title bar</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">The title bar shows how much context the open session has used, how much of your plan is left, and when it resets.</p>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 32px 24px; margin-top: 16px">
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">A real Mac app</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">A toolbar, menus, keyboard shortcuts, Settings and Find. A lightweight app that uses the WebKit already built into macOS.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Keeps to itself</h3>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Capsid needs no separate account. Claude Science uses its own online service. GitHub updates, optional model requests and phone features have their own connections and controls. <a href="../privacy/">Read the privacy details</a>.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(440px, 100%), 1fr)); gap: 48px; align-items: center">
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 16px">
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Optional phone access</div>
+          <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">Capsid on your phone</h2>
+          <p style="margin: 0; max-width: 520px; font-size: 17px; line-height: 27px; text-wrap: pretty">Away from your Mac, see what needs you on your iPhone or iPad, answer a session's question, approve its plan, send it a message, and read back through its conversation and files. The connection to your Mac runs through your Tailscale network. Optional phone notifications use Apple’s push service.</p>
+          <a href="../capsid/phone/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">How it works, and how to set it up <span aria-hidden="true">&rarr;</span></a>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: flex-start; gap: 24px">
+          <img src="../assets/bench-phone-now.png" alt="Capsid on an iPhone: three sessions that need you, one stopped with an error, two working." style="width: 260px; max-width: calc(50% - 12px); height: auto; aspect-ratio: 780 / 1688; box-sizing: border-box; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 30px; display: block">
+          <img src="../assets/bench-phone-question.png" alt="A session's question on an iPhone: three buffer options with HEPES chosen, and Send answer." style="width: 260px; max-width: calc(50% - 12px); height: auto; aspect-ratio: 780 / 1688; box-sizing: border-box; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 30px; display: block; margin-top: 64px">
+        </div>
+      </div>
+    </section>
+
+    <section style="background: #141413; color: #FAF9F5">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 96px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px 48px">
+        <h2 style="margin: 0; flex: 1 1 420px; min-width: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(30px, 4vw, 48px); line-height: 1.15; text-wrap: balance">Capsid is available now.</h2>
+        <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px">
+          <a href="https://github.com/samporter14/bench" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; background: #FAF9F5; color: #141413; border-radius: 999px; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Get Capsid on GitHub</a>
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #B0AEA5">Requires macOS 27 on Apple silicon, with Claude Science installed</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results-and-context" style="border-top:1px solid rgba(31,30,29,.15)">
+      <div style="max-width:1280px;margin:0 auto;padding:80px clamp(20px,5vw,64px);box-sizing:border-box">
+        <div style="max-width:760px;margin-bottom:40px">
+          <h2 style="font:400 clamp(34px,4.2vw,48px)/1.15 Georgia,serif;margin:0 0 20px">Keep the useful parts.<br>Come back with context.</h2>
+          <p style="margin:0;color:#5E5D59">A figure is more useful when you can find its conversation. A project is easier to return to when its references and next thought are still together.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(400px,100%),1fr));gap:40px">
+          <article>
+            <h3 style="font:400 28px/1.2 Georgia,serif;margin:0 0 12px">See what changed.</h3>
+            <p style="color:#5E5D59;margin:0 0 24px">Pick two pictures or text files on the Shelf and choose Compare. Link the image zoom, slide a wipe between matching image sizes, or step through text changes line by line.</p>
+            <a href="../assets/capsid-compare-pictures.png" aria-label="Open full-size picture comparison preview" style="display:block"><img loading="lazy" src="../assets/capsid-compare-pictures.png" width="2120" height="1592" alt="Capsid Compare shows fictional plate-reader charts side by side, with linked zoom and Wipe controls." style="width:100%;height:auto;display:block;border:1px solid #d8d7d3;border-radius:12px;box-sizing:border-box"></a>
+            <a href="../assets/capsid-compare-text.png" style="display:inline-flex;align-items:center;min-height:44px;font-size:15px">See the text comparison preview →</a>
+          </article>
+          <article>
+            <h3 style="font:400 28px/1.2 Georgia,serif;margin:0 0 12px">Leave yourself a way back.</h3>
+            <p style="color:#5E5D59;margin:0 0 24px">Each Project Workspace keeps its last conversation, up to four pinned references and a Working Note. Return to Project brings them back together, with the Shelf showing that project. Your note saves as you work.</p>
+            <a href="../assets/capsid-project-workspace.png" aria-label="Open full-size Project Workspace preview" style="display:block"><img loading="lazy" src="../assets/capsid-project-workspace.png" width="800" height="1160" alt="A fictional Assay development workspace holds a working note, three pinned references and Return to Project." style="width:100%;max-width:360px;height:auto;display:block;border:1px solid #d8d7d3;border-radius:12px;box-sizing:border-box"></a>
+          </article>
+        </div>
+        <p style="color:#73726C;font-size:13px;line-height:20px;margin:24px 0 0">App previews use fictional example data. <a href="../updates/#capsid-1-1-0">Read the Capsid 1.1 release notes</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 48px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px">
+      <div style="display: flex; align-items: center; gap: 16px">
+        <img src="../assets/solanum-mark.svg" alt="" style="width: 48px; height: 48px; display: block">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 18px; line-height: 22px; letter-spacing: 0.17em">SOLANUM</div>
+          <div style="font-size: 14px; line-height: 20px; color: #5E5D59">neurotropic software</div>
+        </div>
+      </div>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <a href="../capsid/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Capsid</a>
+        <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Nidus</a>
+        <a href="../updates/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Updates</a>
+        <a href="https://github.com/samporter14" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">GitHub</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding-top: 24px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">&copy; 2026 Solanum. <a href="../privacy/">Privacy</a>.<br>Capsid is an unofficial personal project, not affiliated with or endorsed by Anthropic. <a href="https://github.com/samporter14/bench/blob/main/LICENSE">Capsid source license</a>.</div>
+  </footer>
+
+</div>
+<script type="module" src="../assets/specimen-showcase.js"></script>
+</body>
+</html>

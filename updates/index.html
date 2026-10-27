@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Updates — Solanum</title>
+<meta name="description" content="Release notes for Capsid and Nidus.">
+<link rel="canonical" href="https://solanum.ltd/updates/">
+<link rel="icon" type="image/svg+xml" href="../assets/solanum-glyph.svg">
+<meta property="og:title" content="Updates — Solanum">
+<meta property="og:description" content="Release notes for Capsid and Nidus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solanum.ltd/updates/">
+<meta name="theme-color" content="#FAF9F5">
+<style>
+html{background:#FAF9F5;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+body{margin:0;background:#FAF9F5}
+a{color:#141413;text-decoration-line:underline;text-decoration-color:#D97757;text-decoration-thickness:2px;text-underline-offset:4px}a:hover{text-decoration-color:#141413}
+a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
+.notes p{margin:0 0 12px}
+.notes ul,.notes ol{margin:0 0 12px;padding-left:20px}
+.notes li{margin:0 0 8px}
+.notes code{font-family:'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace;font-size:13px;overflow-wrap:anywhere}
+.notes pre{margin:0 0 12px;padding:12px 16px;background:#FFFFFF;border:1px solid rgba(31,30,29,0.15);border-radius:8px;white-space:pre-wrap;overflow-wrap:anywhere;line-height:20px}
+.notes>:last-child{margin-bottom:0}
+</style>
+</head>
+<body>
+<div style="background: #FAF9F5; color: #141413; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 27px">
+
+  <header style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+    <a href="../" aria-label="Solanum, home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; color: #141413">
+      <img src="../assets/solanum-mark.svg" alt="" style="width: 40px; height: 40px; display: block">
+      <span style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 20px; line-height: 24px; letter-spacing: 0.17em">SOLANUM</span>
+    </a>
+    <nav aria-label="Software" style="display: flex; gap: 8px">
+      <a href="../capsid/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Capsid</a>
+      <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Nidus</a>
+      <a href="../updates/" aria-current="page" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: underline; text-underline-offset: 6px; font-size: 15px; line-height: 23px; font-weight: 500">Updates</a>
+    </nav>
+  </header>
+
+  <main>
+    <section style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 72px clamp(20px, 5vw, 64px) 80px; display: flex; flex-direction: column; align-items: flex-start; gap: 24px">
+      <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Release notes</div>
+      <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(40px, 5vw, 64px); line-height: 1.1">Updates</h1>
+      <p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 32px; text-wrap: pretty">What changed in Capsid and Nidus, newest first.</p>
+      <nav aria-label="On this page" style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <a href="#capsid" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">Capsid</a>
+        <a href="#nidus" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">Nidus</a>
+      </nav>
+    </section>
+
+    <section id="capsid" style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px) 48px; display: flex; flex-direction: column; gap: 40px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+          <div style="display: flex; align-items: center; gap: 20px">
+            <img src="../assets/capsid-icon-512.png" alt="" style="width: 64px; height: 64px; border-radius: 22%; display: block">
+            <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">Capsid</h2>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+            <a href="../capsid/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">About Capsid <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://github.com/samporter14/bench/releases" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">All releases on GitHub <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <span id="bench" aria-hidden="true"></span>
+        <div style="display: flex; flex-direction: column">
+<article id="capsid-1-1-0" class="notes" style="padding:24px;border:1px solid rgba(31,30,29,.15);border-radius:12px;background:#fff">
+<div style="font:12px/20px 'SF Mono',monospace;color:#73726C">October 27, 2026 · Capsid 1.1.0</div>
+<h3 style="font:400 28px/1.2 Georgia,serif;margin:12px 0 20px">Compare, return, pick up the thread.</h3>
+<ul><li><strong>Compare on the Shelf.</strong> View pictures side by side with linked zoom, wipe between matching image sizes, and step through changes in text files.</li>
+<li><strong>Project Workspaces.</strong> Each project remembers its last conversation, up to four pinned references and a Working Note.</li>
+<li><strong>Eight more specimens.</strong> Capillary electrophoresis, Microtome ribbon, Droplet coalescence, Slime mold maze, Möbius strip, Bayesian update, Fern unfurling and Diatom bring this release to 549. Optional short sequences tell little stories; the new specimens can settle with a closing gesture.</li>
+<li><strong>A clearer way back.</strong> Show Where It Came From opens the source reply. Documents on the Shelf show their words. A short What’s New window introduces the release.</li>
+<li><strong>Your words stay put.</strong> Fixes protect phone drafts, kept README additions and legends while files reload.</li></ul>
+<p><a href="https://github.com/samporter14/bench/releases/tag/v1.1.0">Full Capsid 1.1.0 release notes →</a></p>
+</article>
+          <article id="capsid-0-6-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Capsid 0.6.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 15, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Bench is now Capsid.</strong> The same Mac app has a new name and a clay-and-slate icon inspired by a viral shell. Your settings and notification choices carry over; updating replaces Bench in Applications with Capsid.</li>
+<li><strong>On your phone:</strong> the app is called Capsid. An existing Home Screen icon may keep its Bench label until you add it again and pair again. <a href="https://github.com/samporter14/bench/releases/tag/v0.6.0" style="display: inline-flex; align-items: center; min-height: 44px">Full release notes</a>.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-5-3" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.5.3</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 15, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Usage-limit pauses per session.</strong> A held session shows when it resumes while another working session keeps its specimen and clock. The phone shows the resume time in its own time zone. <a href="https://github.com/samporter14/bench/releases/tag/v0.5.3" style="display: inline-flex; align-items: center; min-height: 44px">Full release notes</a>.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-5-2" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.5.2</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 14, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Pause awareness.</strong> When a plan limit holds a session, its panel and phone status show Paused instead of continuing a working clock. <a href="https://github.com/samporter14/bench/releases/tag/v0.5.2" style="display: inline-flex; align-items: center; min-height: 44px">Full release notes</a>.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-5-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.5.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 14, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Lighter and faster.</strong> One read-only connection replaces repeated database process launches; the panel redraws less, and the phone app opens from cache.</li>
+<li><strong>519 lab specimens.</strong> Twelve more science animations join the collection. Phone permission review also makes hidden characters and oversized code requests easier to spot. <a href="https://github.com/samporter14/bench/releases/tag/v0.5.1" style="display: inline-flex; align-items: center; min-height: 44px">Full release notes</a>.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-5-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.5.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 14, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>More from your phone.</strong> Review permission requests, send a photo, watch replies appear as a session works, and see a badge for sessions needing you. Lasting access requests still need your Mac. <a href="https://github.com/samporter14/bench/releases/tag/v0.5.0" style="display: inline-flex; align-items: center; min-height: 44px">Full release notes</a>.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-4-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.4.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 13, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>A guided setup for Bench on your phone.</strong> Settings → Phone walks you through six steps (Tailscale on your Mac, signing in, HTTPS, Tailscale on your phone, the switch, pairing) and ticks each one off by itself as you go.<a href="../capsid/phone/" style="display: flex; align-items: center; gap: 8px; width: fit-content; min-height: 44px">How it works <span aria-hidden="true">&rarr;</span></a></li>
+<li><strong>Smaller fixes</strong> to the phone app's pairing screen and spacing.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-4-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.4.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 13, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Bench on your phone.</strong> Use Claude Science from your iPhone or iPad over your own private Tailscale network: see what needs you, answer a session's question, approve its plan, send it a message, read back through its conversation and open its files, browse every project and start a session. Off until you turn it on in Settings → Phone.<a href="../capsid/phone/" style="display: flex; align-items: center; gap: 8px; width: fit-content; min-height: 44px">How it works <span aria-hidden="true">&rarr;</span></a></li>
+<li><strong>Notifications, if you want them,</strong> on each paired device: when a session needs you, stops with an error or finishes. By default only while you're away from your Mac, and without session names.</li>
+<li><strong>Reviewed for security</strong> before release. Bench removes its Tailscale address when it quits.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-6" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.6</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 12, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Updates, if you want them.</strong> Settings → General → Updates → Check for updates once a day (off unless you turn it on) offers Install Update when there's a new Bench. Nothing about you or your sessions is sent.</li>
+<li><strong>A welcome for new installs.</strong> A short tour on first launch; Help → Welcome to Bench shows it again.</li>
+<li><strong>Daemon restarts no longer lose cards,</strong> and starting Bench before Claude Science no longer sends a burst of notifications.</li>
+<li><strong>Smaller fixes</strong> from a code review, including that Bench no longer says Mac notifications reach your iPhone (macOS doesn't do that).</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-5" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.5</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 10, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Plan cards show their steps:</strong> click Show steps to read them before you approve.</li>
+<li><strong>Snoozed reminders are visible</strong> in the activity list, with Show Now and Cancel Reminder.</li>
+<li><strong>Shortcuts follow the window you're in,</strong> and the usage popover draws a sparkline of your recent use.</li>
+<li><strong>Settings in tabs:</strong> General, Panel, Alerts, Usage and Specimens.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-4" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.4</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 6, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Approve plans from the card.</strong> When a session asks you to approve its plan, the card shows its summary with Approve. Bench checks it's still the same plan first.</li>
+<li><strong>Usage forecast:</strong> "At this pace: limit around 3:40 PM", and a heads-up when the pace would hit your limit within 45 minutes.</li>
+<li><strong>Field guide:</strong> every specimen has a short, fact-checked note; hover one in Settings → Specimens.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-3" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.3</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 5, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Quick Open (⌘⇧O):</strong> type part of a session's name to jump to it. Needs-you and working sessions come first.</li>
+<li><strong>Mac notifications, if you want them</strong> (off unless you turn them on): Settings → General → Mac notifications → <strong>Also send a Mac notification</strong>. Then a session that needs you or stops with an error also sends a notification, so you see it in full screen or with the panel off. macOS asks your permission once. Notifications show the session and project names unless you turn <strong>Show session and project names</strong> off. Finishes can notify too, and <strong>Send a Test Notification</strong> shows what they look like. To stop them, turn the setting off, or turn Bench off in System Settings → Notifications.</li>
+<li><strong>Panel on any display:</strong> Settings → General → Screen.</li>
+<li><strong>"+2 more" lists every session:</strong> click it on the panel for the full list, without leaving what you're doing.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-2" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.2</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 5, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Favorites:</strong> star the specimens you like best: hover one in Settings → Specimens and click its star, or right-click the panel while it plays. Set <strong>Play</strong> to <strong>Only favorites</strong> (in Settings → Specimens, or the switch in the toolbar's Specimens menu) to play just those. Your other picks are kept for when you switch back. The ☆ filter shows your favorites.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 5, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Choose specimens one by one:</strong> Settings → Specimens says how (click a specimen to switch it on or off, right-click to play only that one), shows every category with its own heading, including ones that are off, and filters to All, On or Off. A category's checkbox shows a dash when only some of it is on. Hover a specimen to see it play in the big preview.</li>
+<li><strong>Don't Play:</strong> right-click the panel to stop the specimen that's playing, or play only that one.</li>
+<li><strong>Later is a reminder now:</strong> Later on a "needs you" card brings it back in 5 minutes (or 15, or after your Nidus focus session) if the session still waits. To get rid of a card for good, use the × or Later → Dismiss.</li>
+<li><strong>20 new specimens (507):</strong> Biopsy punch, Capillary fill, Gap junction, Tight junction, Desmosome, Peroxisome, Nuclear lamina, Transposon jump, Ubiquitin chain, Glycosylation, Cell strainer, Pseudoknot, Weigh boat, Tube uncapping, Vacuum desiccator, SNARE zipper, Detergent solubilization, Sliding clamp, Strand displacement, Sequence logo.</li>
+<li><strong>Also:</strong> the Activity button stays in the toolbar when nothing is running; the panel can sit in any corner (Settings → General → Corner); a failed download now says so.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-3-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.3.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 2, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Heads-up:</strong> a card when your plan is nearly used up and when it resets, when the session you have open has used most of its context, and a week in review once a new week starts.</li>
+<li><strong>Works with Nidus:</strong> while a Nidus focus session runs, "Finished" cards wait and come as one when it ends. Questions and errors still come at once. (Needs Nidus 0.1.5.)</li>
+<li><strong>Menu bar specimen</strong> (Settings → General, off by default): a session working, or a count of those waiting, in the menu bar; click it for every session.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-2-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.2.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 2, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>The Dock menu always has something to open: it says when nothing is working, and lists your latest sessions until Recent fills.</p>
+            </div>
+          </article>
+          <article id="bench-0-2-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.2.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 2, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Every session in one list:</strong> click the status in the toolbar (or right-click Bench in the Dock) for what needs you, what's working and what happened lately. Each row opens its session.</li>
+<li><strong>Recent</strong> keeps finishes, errors and questions after their card is gone, until Bench quits. Nothing is saved to disk.</li>
+<li><strong>The specimen and the cards are separate settings</strong>, so you can turn the animation off and still get questions and errors.</li>
+<li><strong>Reduce Motion</strong> shows a still specimen.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-15" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.15</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 2, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Fixes from a code review:
+- A session that stops with an error now shows a card, instead of disappearing.
+- Cards waiting behind another no longer expire unseen.
+- The panel says "Not updating" when Bench can't read Claude Science, instead of looking live.
+- A waiting card updates when a question becomes a plan to approve.
+- Sessions whose names contain line breaks no longer disappear.
+- Safer daemon start and a safer installer.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-14" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.14</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 1, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Signed with a stable certificate, so macOS keeps the microphone and camera permissions you give Claude Science across updates. Approve them once more on this version.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-13" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.13</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 1, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li>Settings and the toolbar's Specimens options now use the Mac's own controls: General is laid out like System Settings, and each specimen category is a checkbox.</li>
+<li>MIT licensed.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-12" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.12</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>New icon</strong>, in the Solanum family: a flask in a broken ring, one bubble escaped through the gap.</li>
+<li>If Bench opens on Claude Science's <strong>Sign in</strong> screen after a restart, it now presses Sign in for you.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-11" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.11</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>New Settings.</strong> General and Specimens are redesigned in Solanum, with ivory and slate grounds, clear cards, clay switches, and category chips that plainly show what's on. The themes are now called Match Mac, Ivory and Slate.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-10" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.10</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li>Category chips now clearly show what's <strong>on</strong> (clay ✓) and <strong>off</strong>, in the Specimens panel and in Settings. On macOS 27 they looked the same.</li>
+<li>In <strong>Settings → Specimens</strong>, the ☀️/🌙 switch turns the whole tab light or dark.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-9" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.9</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>Bench now needs macOS 27.</strong></p>
+<p>Also in this version (from 0.1.8): the <strong>Specimens</strong> arrow opens an options panel that always shows your real settings, and Bench signs itself back in if it ever opens on Claude Science's Sign in screen.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-8" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.8</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li>The <strong>Specimens</strong> button's arrow opens a new options panel that always shows your real settings (the old menu could show stale ticks, so clicks looked like they did nothing).</li>
+<li>If Bench ever opens on Claude Science's <strong>Sign in</strong> screen after a restart, it now signs itself back in.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-7" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.7</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li><strong>Choose specimens…</strong> in the toolbar menu opens Settings again.</li>
+<li>The specimens grid <strong>plays live</strong> as you scroll (only the ones on screen, so it stays light).</li>
+<li>The ☀️/🌙 switch shows the <strong>whole grid</strong> on light or dark, not just the preview.</li>
+</ul>
+            </div>
+          </article>
+          <article id="bench-0-1-6" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.6</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>Scenes are now Specimens.</strong> In <strong>Settings → Specimens</strong>, the grid shows only the categories you've switched on, and a ☀️/🌙 switch under the preview plays it on light or dark.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-5" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.5</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>Appearance setting:</strong> Settings → General → Appearance lets you keep Bench in Light or Dark, or Match Mac (the default).</p>
+            </div>
+          </article>
+          <article id="bench-0-1-4" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.4</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>13 new lab scenes</strong> (487 in all): Prism, Faraday coil, Van de Graaff, Half-life, Gyroscope, Newton's rings, Separatory funnel, Büchner funnel, Flame test, Precipitate, pH rainbow, Immunofluorescence and Freezing cells.</p>
+<p><strong>Activity graph starts at Claude Science's launch</strong> (June 30), not a year back, so the Usage popover is much narrower.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-3" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.3</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>Fixes no scenes and no "needs you" cards on macOS 27.</strong> macOS 27's built-in sqlite3 (3.54) reads Bench's options differently, so every session read came back empty. Bench now passes them in the order newer versions expect.</p>
+<p><strong>Update:</strong> quit Bench with ⌘Q, replace it in Applications, open it, and click Open Anyway in System Settings → Privacy &amp; Security once. For Apple silicon on macOS 26 and later.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-2" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.2</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>Fixes no scenes and no "needs you" cards</strong> on Macs where Claude Science keeps its data somewhere other than <code>~/.claude-science</code> (seen on macOS 27). Bench now asks Claude Science where its data is.</p>
+<p>New: <strong>Help → Bench Diagnostics…</strong> shows what Bench can see, with a Copy button. Nothing in it names your projects or sessions.</p>
+<p><strong>Update:</strong> quit Bench with ⌘Q, replace it in Applications, open it, and click Open Anyway in System Settings → Privacy &amp; Security once. For Apple silicon on macOS 26 and later.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p><strong>If the scenes or "needs you" cards don't show up,</strong> Bench now says so instead of staying quiet: the Scenes button shows a warning, and its menu and Settings → General say what's wrong.</p>
+<p>To see exactly which step fails, run this in Terminal (it doesn't name any of your projects or sessions):</p>
+<pre><code>/Applications/Bench.app/Contents/MacOS/Bench --diagnose
+</code></pre>
+<p>Install as before: download <strong>Bench.zip</strong>, drag Bench into Applications (replace the old one), open it, and click <strong>Open Anyway</strong> in System Settings → Privacy &amp; Security the first time. For Apple silicon on macOS 26.</p>
+            </div>
+          </article>
+          <article id="bench-0-1-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Bench 0.1.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 28, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>The first release: Claude Science as a tiny, native Mac app, with lab scenes in a floating glass panel while your sessions work.</p>
+<p><strong>For Macs with Apple silicon on macOS 26, with Claude Science installed.</strong></p>
+<ol>
+<li>Download <strong>Bench.zip</strong> below and open it.</li>
+<li>Drag <strong>Bench</strong> into <strong>Applications</strong>.</li>
+<li>Open it. The first time, macOS blocks it: click <strong>Done</strong>, then <strong>System Settings → Privacy &amp; Security → Open Anyway</strong>. Only once.</li>
+<li>Close any Claude Science browser tab. Bench signs you in.</li>
+</ol>
+<p>This historical release used a local Claude Science interface. Current connections and data handling are described on <a href="../privacy/">Privacy</a>.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="nidus" style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px) 48px; display: flex; flex-direction: column; gap: 40px">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+          <div style="display: flex; align-items: center; gap: 20px">
+            <img src="../assets/nidus-icon.png" alt="" style="width: 64px; height: 64px; border-radius: 22%; display: block">
+            <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">Nidus</h2>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+            <a href="../nidus/" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">About Nidus <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://github.com/samporter14/nidus/releases" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; line-height: 23px; font-weight: 500">All releases on GitHub <span aria-hidden="true">&rarr;</span></a>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column">
+<article id="nidus-0-4-4" class="notes" style="padding:24px;border:1px solid rgba(31,30,29,.15);border-radius:12px;background:#fff">
+<div style="font:12px/20px 'SF Mono',monospace;color:#73726C">October 27, 2026 · Nidus 0.4.4</div>
+<h3 style="font:400 28px/1.2 Georgia,serif;margin:12px 0 20px">A clearer start. A calmer finish.</h3>
+<ul><li><strong>A session preview.</strong> See the resolved length, blocked categories and break in the composer, with details a click away.</li>
+<li><strong>One choice of length.</strong> Duration clauses in a goal no longer fight the Length menu.</li>
+<li><strong>Pick up next time.</strong> Optional next-step notes are available after at least 60 seconds focused, including unnamed sessions.</li>
+<li><strong>A familiar finish.</strong> Solanum finish cards and shared buttons bring a more consistent feel.</li></ul>
+<p><a href="https://github.com/samporter14/nidus/releases/tag/v0.4.4">Full Nidus 0.4.4 release notes →</a></p></article>
+          <article id="nidus-0-3-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.3.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 6, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Nidus 0.3.0 lets assistants, launchers and Shortcuts drive focus sessions, with real answers.</p>
+<ul>
+<li><strong>Shortcuts.</strong> Start Focus can start a saved setup. New: Add Focus Time, which says how many minutes it actually added. Get Focus Status now says whether a session is running, paused or on a break, whether it's open-ended or strict, and whether it's blocking right now.</li>
+<li><strong>For scripts and assistants.</strong> Run Nidus Command takes one JSON request (status, setups, start, addTime, end) and answers in JSON. A retry with the same request id gets the first answer back instead of doing it twice.</li>
+<li><strong>Launch links.</strong> Right-click a setup and choose Copy Launch Link for a <code>nidus://</code> link that starts just that setup, by id, so renaming it doesn't break the link.</li>
+<li><strong>Optional extras</strong> in the repository's <code>integrations</code> folder: Raycast Quicklinks, and a small assistant skill (for ChatGPT on your Mac, Codex and similar) that starts a setup, adds time or says how long is left.</li>
+<li><strong>docs/automation.md</strong> covers Shortcuts, links, Raycast, Alfred, BetterTouchTool and the JSON command.</li>
+</ul>
+<p>The same rules apply however a session is started: a strict session can't be ended from outside, a start never replaces a session that's on, and asking for status changes nothing. Nidus still never connects to the internet.</p>
+            </div>
+          </article>
+          <article id="nidus-0-2-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.2.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 5, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Nidus 0.2.0 is the biggest update yet.</p>
+<ul>
+<li><strong>Setups.</strong> Save what you start often, like "Deep work: 90 minutes, only Xcode, strict", and start it in one click from the popover or the right-click menu.</li>
+<li><strong>Schedules.</strong> "Weekdays, 9 to 12" starts a session on its own. A card a minute before lets you skip it or start now.</li>
+<li><strong>Any length.</strong> Type it: "40", "1h30", "until 3:30". Or end a session when your next calendar event starts (Calendar access is asked the first time, and read only on this Mac).</li>
+<li><strong>Part of a site.</strong> Block <code>youtube.com/shorts</code> or <code>reddit.com/r/all</code> and leave the rest.</li>
+<li><strong>Brave and Chromium</strong> join Safari, Chrome and Opera Air.</li>
+<li><strong>A pause before a snooze.</strong> Settings can make Snooze wait 10 or 30 seconds first.</li>
+<li><strong>Shortcuts and links.</strong> Start Focus, End Focus, Toggle Focus and Get Focus Status in Shortcuts, plus <code>nidus://start</code>, <code>end</code>, <code>toggle</code> and <code>popover</code> links. A strict session can't be ended by either.</li>
+<li><strong>Stats.</strong> Export your history as CSV or JSON, a recap card on Mondays, and a calmer Stats page.</li>
+<li><strong>Quitting puts tabs back.</strong> Quit mid-session and blocked tabs return to their pages; they're blocked again when Nidus opens.</li>
+<li><strong>A new look in places.</strong> Settings in toolbar tabs, the popover shows when a session ends and how often something was blocked, and the finish card asks "Did you finish?" first.</li>
+</ul>
+            </div>
+          </article>
+          <article id="nidus-0-1-5" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.5</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 2, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Tells Bench when a focus session runs, so Bench can hold its "Finished" cards until you're done. Only whether a session runs and until when; nothing leaves your Mac.</p>
+            </div>
+          </article>
+          <article id="nidus-0-1-4" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.4</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Oct 1, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Signed with a stable certificate, so macOS keeps Nidus's permission to control your browsers across updates. Say OK once more on this version.</p>
+            </div>
+          </article>
+          <article id="nidus-0-1-3" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.3</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<ul>
+<li>The popover, cards and Settings now use the Mac's own controls: a Liquid Glass popover and cards, and Settings laid out like System Settings. Clay stays as the accent.</li>
+<li>Fixed: cards at the top of the screen (something blocked, a session finished, a browser needing permission) never appeared.</li>
+</ul>
+            </div>
+          </article>
+          <article id="nidus-0-1-2" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.2</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>Pressing Start now asks macOS for permission to control each open browser Nidus hasn't been allowed yet, so blocked websites are blocked from the first session.</p>
+            </div>
+          </article>
+          <article id="nidus-0-1-1" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.1</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>The popover resizes between a new session and a running one.</p>
+            </div>
+          </article>
+          <article id="nidus-0-1-0" style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding: 32px 0; display: flex; flex-wrap: wrap; gap: 12px 48px">
+            <div style="flex: 0 0 200px; display: flex; flex-direction: column; gap: 4px">
+              <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Nidus 0.1.0</h3>
+              <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">Sep 29, 2026</div>
+            </div>
+            <div class="notes" style="flex: 999 1 420px; min-width: 0; max-width: 720px; font-size: 15px; line-height: 23px">
+<p>The first standalone Nidus: a menu bar app for macOS 27 on Apple silicon.</p>
+<ul>
+<li>Click the glyph in the menu bar to start a session: a goal, a length, the categories to block.</li>
+<li>Blocked apps quit (or hide); blocked websites in Safari, Chrome and Opera Air go to a quiet page until the session ends.</li>
+<li>Cards at the top of the screen say what was blocked and how the session went. Strict mode, breaks, Focus modes through Shortcuts, and stats.</li>
+<li>Local focus controls, in Ivory and Slate. See <a href="../privacy/">Privacy</a> for current data handling.</li>
+</ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 48px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px">
+      <div style="display: flex; align-items: center; gap: 16px">
+        <img src="../assets/solanum-mark.svg" alt="" style="width: 48px; height: 48px; display: block">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 18px; line-height: 22px; letter-spacing: 0.17em">SOLANUM</div>
+          <div style="font-size: 14px; line-height: 20px; color: #5E5D59">neurotropic software</div>
+        </div>
+      </div>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <a href="../capsid/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Capsid</a>
+        <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Nidus</a>
+        <a href="../updates/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Updates</a>
+        <a href="https://github.com/samporter14" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">GitHub</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding-top: 24px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">&copy; 2026 Solanum.</div>
+  </footer>
+
+</div>
+</body>
+</html>

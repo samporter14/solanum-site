@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Solanum</title>
+<meta name="description" content="How Capsid, Nidus and the Solanum website handle local data and connections.">
+<link rel="canonical" href="https://solanum.ltd/privacy/">
+<link rel="icon" type="image/svg+xml" href="../assets/solanum-glyph.svg">
+<meta property="og:title" content="Privacy — Solanum">
+<meta property="og:description" content="How Capsid, Nidus and the Solanum website handle local data and connections.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://solanum.ltd/privacy/">
+<meta name="theme-color" content="#FAF9F5">
+<style>
+html{background:#FAF9F5;-webkit-text-size-adjust:100%}
+img{max-width:100%}
+body{margin:0;background:#FAF9F5}
+a{color:#141413;text-decoration-line:underline;text-decoration-color:#D97757;text-decoration-thickness:2px;text-underline-offset:4px}a:hover{text-decoration-color:#141413}
+a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
+.policy-copy li{margin:0 0 16px}.policy-copy ul{padding-left:22px;margin:0}.policy-copy a{overflow-wrap:anywhere}
+</style>
+</head>
+<body>
+<div style="background: #FAF9F5; color: #141413; font-family: 'Anthropic Sans', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 17px; line-height: 27px">
+
+  <header style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 24px clamp(20px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 32px">
+    <a href="../" aria-label="Solanum, home" style="display: flex; align-items: center; gap: 12px; min-height: 44px; text-decoration: none; color: #141413">
+      <img src="../assets/solanum-mark.svg" alt="" style="width: 40px; height: 40px; display: block">
+      <span style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 20px; line-height: 24px; letter-spacing: 0.17em">SOLANUM</span>
+    </a>
+    <nav aria-label="Software" style="display: flex; gap: 8px">
+      <a href="../capsid/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Capsid</a>
+      <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Nidus</a>
+      <a href="../updates/" style="display: flex; align-items: center; min-height: 44px; padding: 0 12px; color: #141413; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Updates</a>
+    </nav>
+  </header>
+
+  <main style="max-width:920px;margin:0 auto;padding:64px clamp(20px,5vw,64px) 80px;box-sizing:border-box">
+    <div style="font:12px/20px 'SF Mono',monospace;color:#73726C;letter-spacing:.08em;text-transform:uppercase">Privacy · October 27, 2026</div>
+    <h1 style="font:400 clamp(40px,6vw,64px)/1.1 Georgia,serif;margin:20px 0 24px;text-wrap:balance">Privacy, without the specimen jar.</h1>
+    <p style="font-size:22px;line-height:34px;margin:0 0 56px;max-width:660px">We make software for your work. We don’t want a collection of your work.</p>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">A small app is still an app.</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">Capsid and Nidus keep settings and working data on your Mac. The reviewed code has no Solanum account system or app analytics. That does not make everything you do through them offline: Claude Science, connected services, downloads and this website have their own data flows.</div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">Capsid and Claude Science</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">Capsid displays Claude Science’s interface and reads local session information so it can show status, questions, plans and results. Claude Science sends your requests through its own service, under that service’s terms and privacy policy. Capsid does not turn Claude Science into an offline model.<br><br>Capsid also stores its own settings, Shelf metadata, project working notes and references, and files you choose to save or keep. Kept results live in folders you choose; removing an app does not remove files you saved elsewhere.</div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">Connections with a job to do</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px"><ul>
+<li><strong>Updates.</strong> Capsid checks GitHub for a new release about once a day by default. Turn this off in Settings → General → Updates. A check sends your IP address and ordinary request information, including the Capsid version in its User-Agent. Check Now and installing an update also contact GitHub.</li>
+<li><strong>Ask Another Model.</strong> This is off by default. If enabled, Capsid contacts the HTTPS provider configured in Settings, including to fetch its model list. Pressing Ask sends your question and any conversation you choose to include to that provider, with your API key. The provider’s terms apply. The key is stored in a file restricted to your Mac account, rather than in Keychain.</li>
+<li><strong>Phone access.</strong> Off by default. When enabled, Capsid serves the phone interface to paired devices through your Tailscale network. Its controls determine whether devices can browse conversations and files or answer, approve and send. You can remove paired devices or turn phone access off.</li>
+<li><strong>Phone notifications.</strong> Optional Web Push notifications use Apple’s push service. Notification contents are encrypted for the receiving device; the push service still handles delivery information. Tailscale and Apple have their own privacy policies.</li>
+<li><strong>Links and integrations.</strong> Opening a website, signing in to a connected service, or running a Shortcut can involve another provider. That provider receives the information needed for the action you request.</li>
+</ul></div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">Nidus keeps a local notebook.</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">Nidus stores settings and, depending on your choices and version, session history, projects, goals, inbox items and next-step notes locally. Blocking inspects running apps and browser tabs to apply your rules. Optional Calendar access reads event times to help choose when a session ends; it does not need event titles for this.<br><br>Activity recording and document or conversation names are separate options, both off by default in the reviewed current code. If enabled, they can put app and recognized-site durations, plus selected tab or front-window names, into local history and exports. Nidus does not read document contents for Activity. Names can still be private: choose exclusions, leave names off, or use Remove saved names and Clear history in Settings. Disabling a recording option does not erase all previously finished history.<br><br>Nidus and Capsid can exchange local focus status. Sharing Capsid task names also needs Capsid’s sharing switch and Nidus’s name option. Optional Plaque sharing writes a local focus snapshot, which can include goal or project text if you choose; sending a page from Plaque is a separate action. Websites or Shortcuts that you ask Nidus to open may make their own network connections.</div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">This website has a host.</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">These pages use local assets and system fonts. We have not added advertising trackers, forms or analytics scripts to the reviewed site. Cloudflare serves and protects it, so Cloudflare receives connection information such as your IP address, browser request headers and the page requested. Its response headers can also ask browsers to send network error reports. That is data processing, even on a simple static website. See <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare’s privacy policy</a>.</div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">Managing local copies.</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">Use each app’s settings to control optional recording and sharing. History and saved-name deletion controls affect the app’s local records; exported files, your Mac’s backups and copies you sent elsewhere need to be managed separately. A connected provider keeps information according to its own policy. We do not promise that deleting a local record deletes somebody else’s copy.</div></section>
+<section style="border-top:1px solid rgba(31,30,29,.15);padding:28px 0"><h2 style="font:400 28px/1.2 Georgia,serif;margin:0 0 16px">Questions, without the research attachment.</h2><div class="policy-copy" style="color:#5E5D59;font-size:17px;line-height:28px">Project links lead to GitHub, where issues and comments are public. Please do not post private research, credentials or personal information there. If you contact Sam directly, he receives what you send, including your address, message and attachments. This page will change if these practices change.</div></section>
+  </main>
+  <footer style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 48px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 32px">
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px 48px">
+      <div style="display: flex; align-items: center; gap: 16px">
+        <img src="../assets/solanum-mark.svg" alt="" style="width: 48px; height: 48px; display: block">
+        <div style="display: flex; flex-direction: column; gap: 4px">
+          <div style="font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-size: 18px; line-height: 22px; letter-spacing: 0.17em">SOLANUM</div>
+          <div style="font-size: 14px; line-height: 20px; color: #5E5D59">neurotropic software</div>
+        </div>
+      </div>
+      <nav aria-label="Footer" style="display: flex; flex-wrap: wrap; gap: 8px 24px">
+        <a href="../capsid/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Capsid</a>
+        <a href="../nidus/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Nidus</a>
+        <a href="../updates/" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">Updates</a>
+        <a href="https://github.com/samporter14" style="display: flex; align-items: center; min-height: 44px; font-size: 15px; line-height: 23px">GitHub</a>
+      </nav>
+    </div>
+    <div style="border-top: 1px solid rgba(31, 30, 29, 0.15); padding-top: 24px; font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #73726C">&copy; 2026 Solanum. <a href="../privacy/">Privacy</a>.<br>Capsid is an unofficial personal project, not affiliated with or endorsed by Anthropic. <a href="https://github.com/samporter14/bench/blob/main/LICENSE">Capsid source license</a> · <a href="https://github.com/samporter14/nidus/blob/main/LICENSE">Nidus source license</a>.</div>
+  </footer>
+
+</div>
+</body>
+</html>
