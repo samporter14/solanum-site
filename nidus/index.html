@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nidus — Solanum</title>
-<meta name="description" content="Nidus is a macOS menu bar app that blocks the apps and websites that pull you away, for as long as you say.">
+<meta name="description" content="Nidus is a macOS menu bar app that blocks the apps and websites that pull you away, for as long as you say, and shows where your whole day went.">
 <link rel="canonical" href="https://solanum.ltd/nidus/">
 <link rel="icon" type="image/svg+xml" href="../assets/solanum-glyph.svg">
 <meta property="og:title" content="Nidus — Solanum">
-<meta property="og:description" content="Nidus is a macOS menu bar app that blocks the apps and websites that pull you away, for as long as you say.">
+<meta property="og:description" content="Nidus is a macOS menu bar app that blocks the apps and websites that pull you away, for as long as you say, and shows where your whole day went.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://solanum.ltd/nidus/">
 <meta name="theme-color" content="#FAF9F5">
@@ -41,7 +41,7 @@ a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
         <img src="../assets/nidus-icon.png" alt="Nidus icon: five ribbons pinwheeled inside a broken ring, on a yellow tile." style="width: 88px; height: 88px; border-radius: 22%; display: block">
         <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Nidus &middot; macOS menu bar app</div>
         <h1 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 52px); line-height: 1.1; text-wrap: balance">Block the apps and websites that pull you away, for as long as you say.</h1>
-        <p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 32px; text-wrap: pretty">Blocked apps quit the moment they open. Blocked websites are replaced with a quiet page that reminds you what you're working on.</p>
+        <p style="margin: 0; max-width: 520px; font-size: 20px; line-height: 32px; text-wrap: pretty">Blocked apps quit the moment they open. Blocked websites are replaced with a quiet page that reminds you what you're working on. And all day, focused or not, Nidus keeps track of where your time actually goes.</p>
         <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: 8px">
           <a href="https://github.com/samporter14/nidus" style="display: inline-flex; align-items: center; min-height: 48px; box-sizing: border-box; padding: 0 24px; background: #141413; color: #FAF9F5; border-radius: 999px; text-decoration: none; font-size: 15px; line-height: 23px; font-weight: 500">Get Nidus on GitHub</a>
           <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 12px; line-height: 19px; color: #5E5D59">Requires macOS 27 on Apple silicon</div>
@@ -64,7 +64,7 @@ a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
               <img src="../assets/nidus-popover-idle.png" alt="The Nidus popover under the menu bar: a goal field reading What are you working on?, saved setups for Deep work, Writing and Reading, a 25 minute length, the Social and Video categories, and a clay Start button." style="width: auto; height: auto; max-width: 100%; max-height: 192px; display: block">
             </div>
             <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Start from the menu bar</h3>
-            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Say what you are working on, choose a length and what to block, and press Start.</p>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Say what you are working on, choose a length and what to block, and press Start. Underneath, Today shows your time at the Mac and in focus, and your top apps, websites and documents.</p>
           </div>
           <div style="display: flex; flex-direction: column; gap: 12px">
             <div style="height: 240px; margin-bottom: 8px; box-sizing: border-box; padding: 24px; background: #FFFFFF; border: 1px solid rgba(31, 30, 29, 0.15); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center">
@@ -85,7 +85,7 @@ a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
               <img src="../assets/nidus-settings-sessions.png" alt="Nidus Settings, Sessions section: session length, break after a session, and Strict mode." style="width: 520px; max-width: 100%; height: auto; display: block">
             </div>
             <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Strict mode</h3>
-            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">No snooze or pause during a session, and ending one early means typing &ldquo;stop early&rdquo; in the popover.</p>
+            <p style="margin: 0; max-width: 520px; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">No snooze or pause during a session, and ending one early means typing &ldquo;stop early&rdquo; in the popover. Nidus won't quit during a strict session, and comes back within seconds if it's killed.</p>
           </div>
         </div>
 
@@ -99,17 +99,67 @@ a:focus-visible{outline:2px solid rgba(31,30,29,0.3);outline-offset:3px}
             <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Pause or add five minutes from the popover. Snooze one app or site for a few minutes from its card or the block page.</p>
           </div>
           <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
-            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Five browsers</h3>
-            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Safari, Chrome, Brave, Chromium and Opera Air. When the session ends, every tab goes back to where it was. Firefox isn't supported: it offers no way to script its tabs.</p>
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Five browsers, and the rest</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Websites are blocked in Safari, Chrome, Brave, Chromium and Opera Air, and every tab goes back to where it was when the session ends. Firefox, Arc, Edge and other browsers Nidus can't watch can be blocked as a whole app until the session ends.</p>
           </div>
           <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
             <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Keeps to itself</h3>
-            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Nidus keeps its own records locally. Optional history, Activity and sharing controls affect what it saves. Websites and Shortcuts you ask it to open may use online services. <a href="../privacy/">Read the privacy details</a>.</p>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">No account, no analytics, no server: Nidus never connects to the internet. Its records, Activity included, stay in files on your Mac, and Settings can turn them off or clear them. <a href="../privacy/">Read the privacy details</a>.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <section id="activity" style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
+      <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 40px">
+        <div style="display: flex; flex-direction: column; gap: 16px">
+          <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">Activity</div>
+          <h2 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: clamp(34px, 4.2vw, 48px); line-height: 1.15">Where the day actually went.</h2>
+          <p style="margin: 0; max-width: 720px; font-size: 20px; line-height: 32px; text-wrap: pretty">Nidus records which app, website or document was in front, and when, all day, not only during sessions. Then it draws the day back for you.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px 24px">
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Your day to clock scale</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Today opens on a ribbon of your day, colored by category, with your focus sessions above it. Short interruptions fold into what they interrupted; hover a block to see what's inside.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Apps, websites, documents</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">One ranked list by day, week or month. Documents are real files, plus Google Docs and Office on the web. Websites group by host. Click a row to open it again, or an app to see its sites and files.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Week and hour</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">A bar per day for the last seven days, each category against the week before. A weekday-by-hour grid shows when Work happens and when distraction does. Click a day or an hour to open it.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Drift</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">What pulled you away: three minutes or more on something, then three minutes or more on a distraction straight after, with how often it happened and the time it cost.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Work, and what counts</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Put the apps and sites you work in under Work: it counts time and is never blocked. Right-click any row to count it as Work, a category or Uncategorized, without changing what gets blocked.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Honest about idle</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Time stops at your last input after five minutes away, and a session counts only itself. During focus, reading in silence still counts. Days are kept for 90 days by default, and export as CSV.</p>
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 32px 24px">
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">A widget for today</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Nidus Today shows the day's Work, distracting and other time, with a small ribbon in the medium size. Another widget shows your goal and time left, or setups to start.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Shortcuts and Control Center</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Get Today's Activity and How Much Work Today join the focus actions in Shortcuts. Start Nidus and End Nidus Session can sit in Control Center.</p>
+          </div>
+          <div style="border-top: 1px solid rgba(31, 30, 29, 0.3); padding-top: 24px; display: flex; flex-direction: column; gap: 12px">
+            <h3 style="margin: 0; font-family: 'Anthropic Serif', Georgia, 'Times New Roman', Times, serif; font-weight: 400; font-size: 24px; line-height: 31px">Focus filters</h3>
+            <p style="margin: 0; font-size: 15px; line-height: 23px; color: #5E5D59; text-wrap: pretty">Add Nidus as a Focus filter in System Settings and pick a setup: turning that Focus on starts it, and turning it off ends it, unless it's strict.</p>
+          </div>
+        </div>
+        <p style="margin: 0; font-size: 13px; color: #73726C"><a href="../updates/#nidus-0-6-5">Read what's new in Nidus 0.6</a>.</p>
+      </div>
+    </section>
     <section style="border-top: 1px solid rgba(31, 30, 29, 0.15)">
       <div style="max-width: 1280px; margin: 0 auto; box-sizing: border-box; padding: 80px clamp(20px, 5vw, 64px); display: flex; flex-direction: column; gap: 16px">
         <div style="font-family: 'Anthropic Mono', 'JetBrains Mono', 'SF Mono', Monaco, 'Courier New', monospace; font-size: 11px; line-height: 16px; letter-spacing: 0.08em; text-transform: uppercase; color: #73726C">On the name</div>
